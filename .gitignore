@@ -1,2 +1,7 @@
 *.sqlite
-*.sqlite
+evn.py
+__pycache__
+.~C9*
+*.png
+static/
+media/
