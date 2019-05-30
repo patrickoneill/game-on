@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{%  load static from staticfiles %}
+{% load bootstrap_tags %}
+
+{% block content %}
+<h1>Want to challenge me</h1>
+    
+    <form method="POST">
+        {% csrf_token %}
+        
+        <label for="challenge_id">Challenge Me</label>
+        <input type="text" id="challenge_id" name="name" placeholder="What game?"/>
+        <br/>
+       
+        <label for="challenge_done">Challenge Me</label>
+        <input type="checkbox" id="challenge_done" name="done"/>
+        <br/>
+        <button type="submit">Post</button>
+    </form>
+
+{% endblock %}

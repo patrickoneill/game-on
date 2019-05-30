@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{%  load static from staticfiles %}
+{% load bootstrap_tags %}
+
+{% block content %}
+<div class="row row-flex">
+    <h1>Welcome To Challenge Me!</h1>
+    <br/>
+    <table>
+        {% for challenge in challenges %}
+        <tr>
+            {% if challenge.done %}
+            <td><strike>{{ challenge.name }}</strike></td>
+            {% else %}
+            <td>{{ challenge.name }}</td>
+            {% endif %}
+        </tr>
+        {% empty %}
+        <h3>No challenges posted today</h3>
+        {% endfor %}
+        
+    </table>
+    <a href="{% url 'post_challenge' %}">Post a Challenge</a>
+</div>
+{% endblock %}
+
+
+
