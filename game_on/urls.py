@@ -16,8 +16,23 @@ Including another URLconf
 from django.conf.urls import url, include
 from django.contrib import admin
 from accounts import urls as urls_accounts
+from merchandise import urls as urls_merch
+from basket import urls as urls_basket
+from checkout import urls as urls_checkout
+from search import urls as urls_search
+from merchandise.views import all_merch
+from challenge import urls as urls_challenges
+from django.views import static
+from .settings import MEDIA_ROOT
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^accounts/', include(urls_accounts))
+    url(r'^$', all_merch, name='index'),
+    url(r'^accounts/', include(urls_accounts)),
+    url(r'^merchandise/', include(urls_merch)),
+    url(r'^basket/', include(urls_basket)),
+    url(r'^checkout/', include(urls_checkout)),
+    url(r'^challenge/', include(urls_challenges)),
+    url(r'^search/', include(urls_search)),
+    url(r'^media/(?P<path>.*)$', static.serve, {'document_root': MEDIA_ROOT}),
 ]
