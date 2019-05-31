@@ -57,3 +57,5 @@ Used travis to check that the app was building correctly
 
 ### heroku
 Heroku was used to deploy the app
+
+![DSC_0499](https://user-images.githubusercontent.com/33999607/58737368-23122d80-83f9-11e9-8c91-0f4109947faf.JPG)
