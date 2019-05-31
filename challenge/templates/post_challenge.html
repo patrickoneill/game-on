@@ -3,19 +3,19 @@
 {% load bootstrap_tags %}
 
 {% block content %}
-<h1>Want to challenge me</h1>
+<h1 class="text-center">Want to challenge me</h1>
     
-    <form method="POST">
+    <form method="POST" class="col-md-offset-5 col-md-6">
         {% csrf_token %}
         
-        <label for="challenge_id">Challenge Me</label>
-        <input type="text" id="challenge_id" name="name" placeholder="What game?"/>
+        <label for="challenge_id">Challenge The Game</label>
+        <br/>
+        <input type="text" id="challenge_id" name="name" placeholder="What game challenge?"/>
         <br/>
        
-        <label for="challenge_done">Challenge Me</label>
-        <input type="checkbox" id="challenge_done" name="done"/>
+        
         <br/>
-        <button type="submit">Post</button>
+        <button type="submit" class="btn btn-danger">Post</button>
     </form>
 
 {% endblock %}
